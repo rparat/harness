@@ -1,0 +1,27 @@
+pipeline:
+  name: Demo Pipeline
+  identifier: demo_pipeline
+  projectIdentifier: default_project
+  orgIdentifier: default
+  stages:
+    - stage:
+        name: Build
+        identifier: Build
+        type: CI
+        spec:
+          cloneCodebase: false
+          platform:
+            os: Linux
+            arch: Amd64
+          runtime:
+            type: Cloud
+            spec: {}
+          execution:
+            steps:
+              - step:
+                  type: Run
+                  name: Echo
+                  identifier: Echo
+                  spec:
+                    shell: Sh
+                    command: echo "Hello Harness"
